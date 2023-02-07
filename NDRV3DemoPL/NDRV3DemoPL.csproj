@@ -6,10 +6,11 @@
 		<Nullable>enable</Nullable>
 		<UseWPF>true</UseWPF>
 		<UseWindowsForms>true</UseWindowsForms>
-		<ApplicationIcon>Resources\Dangan3Win.ico</ApplicationIcon>
+		<ApplicationIcon>Icon\Dangan3Win.ico</ApplicationIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
+		<None Remove="Icon\Dangan3Win.ico" />
 		<None Remove="Resources\589120_hero1.jpg" />
 		<None Remove="Resources\Dangan3Win.ico" />
 		<None Remove="Resources\data.zip" />
@@ -17,7 +18,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Include="Resources\Dangan3Win.ico" />
+	  <Content Include="Icon\Dangan3Win.ico">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Content>
+	  <Resource Include="Resources\Dangan3Win.ico">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Resource>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -30,16 +36,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Reference Include="Paks.Zip">
-			<HintPath>..\..\Paks.Zip\Paks.Zip\bin\Release\net7.0\publish\win-x64\Paks.Zip.dll</HintPath>
-		</Reference>
+	  <Reference Include="Paks.Zip">
+	    <HintPath>..\..\Paks.Zip\Paks.Zip\bin\Release\net7.0\publish\win-x86\Paks.Zip.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 
 	<ItemGroup>
 		<Resource Include="Resources\589120_hero1.jpg">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Resource>
-		<Resource Include="Resources\Dangan3Win.ico">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Resource>
 	</ItemGroup>

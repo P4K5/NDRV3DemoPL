@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NDRV3DemoPL"
         mc:Ignorable="d"
-        Icon="\Resources\Dangan3Win.ico"
+        Icon="/Resources/Dangan3Win.ico"
         Title="Danganronpa V3: Killing Harmony Demo - Instalator Spolszczenia" Height="Auto" Width="750" ResizeMode="CanMinimize" SizeToContent="Height" Background="#FFBFBFBF" Loaded="Window_Loaded" Closing="Window_Closing">
     <Window.Resources>
         <Style x:Key="btnBottom" TargetType="Button">

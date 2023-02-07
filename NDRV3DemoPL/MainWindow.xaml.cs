@@ -150,7 +150,7 @@ namespace NDRV3DemoPL
                 using (var zip = new ZipExtractor(Assembly.GetExecutingAssembly().GetManifestResourceStream("NDRV3DemoPL.Resources.data.zip")))
                 {
                     zip.OnExtractStatus += Zip_OnExtractStatus;
-                    zip.Extract();
+                    zip.Extract(directory);
                 }
 
                 File.Delete(directory + "/" + cpkFiles[1]);
