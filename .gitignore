@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/NDRV3DemoPL/Resources/PRZECZYTAJ MNIE.txt
+/NDRV3DemoPL/Resources/data.zip

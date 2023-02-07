@@ -1,0 +1,60 @@
+﻿<Window x:Class="NDRV3DemoPL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NDRV3DemoPL"
+        mc:Ignorable="d"
+        Icon="\Resources\Dangan3Win.ico"
+        Title="Danganronpa V3: Killing Harmony Demo - Instalator Spolszczenia" Height="Auto" Width="750" ResizeMode="CanMinimize" SizeToContent="Height" Background="#FFBFBFBF" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Window.Resources>
+        <Style x:Key="btnBottom" TargetType="Button">
+            <Setter Property="Width" Value="85" />
+            <Setter Property="Height" Value="33" />
+            <Setter Property="Margin" Value="10" />
+        </Style>
+        <Style x:Key="btnBrowse" TargetType="Button">
+            <Setter Property="Width" Value="85" />
+            <Setter Property="Height" Value="33" />
+            <Setter Property="Margin" Value="10,0,10,10" />
+        </Style>
+        <Style x:Key="textBoxAndProgressBar" TargetType="{x:Type Control}">
+            <Setter Property="Height" Value="33" />
+            <Setter Property="Margin" Value="10,0,10,10" />
+        </Style>
+        <Style x:Key="topTextBlock" TargetType="TextBlock">
+            <Setter Property="Margin" Value="10,20,0,3" />
+        </Style>
+        <Style x:Key="bottomTextBlock" TargetType="TextBlock">
+            <Setter Property="Margin" Value="10,0,0,10" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Image Grid.ColumnSpan="7" Grid.RowSpan="1" Source="/Resources/589120_hero1.jpg" Stretch="Fill" />
+        <Button x:Name="btnCancel" Style="{StaticResource btnBottom}" Grid.Column="6" Grid.Row="3" Content="Anuluj" Click="btnCancel_Click"/>
+        <Button x:Name="btnInstall" Style="{StaticResource btnBottom}" Grid.Column="5" Grid.Row="3" Content="Instaluj" Click="btnInstall_Click"/>
+        <TextBox x:Name="textBoxBrowse" Style="{StaticResource textBoxAndProgressBar}" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="13px" TextChanged="textBoxBrowse_TextChanged"/>
+        <Button x:Name="btnBrowse" Style="{StaticResource btnBrowse}" Grid.Column="5" Grid.Row="2" Content="Przeglądaj..." VerticalAlignment="Top" Click="btnBrowse_Click"/>
+        <TextBlock x:Name="textBlock1" Style="{StaticResource topTextBlock}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" Text="Spolszczenie zostanie zainstalowane w poniższym folderze:" VerticalAlignment="Bottom"/>
+        <TextBlock x:Name="textBlockInfo" Style="{StaticResource bottomTextBlock}" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="4" VerticalAlignment="Top"/>
+        <Button x:Name="btnRead" Style="{StaticResource btnBottom}" Grid.Row="3" Content="Informacje" Click="btnRead_Click"/>
+
+        <ProgressBar x:Name="progressBar" Style="{StaticResource textBoxAndProgressBar}" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" VerticalAlignment="Top" Visibility="Hidden" Maximum="300"/>
+
+    </Grid>
+</Window>

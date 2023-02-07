@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net7.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<UseWindowsForms>true</UseWindowsForms>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Resources\589120_hero1.jpg" />
+		<None Remove="Resources\Dangan3Win.ico" />
+		<None Remove="Resources\data.zip" />
+		<None Remove="Resources\PRZECZYTAJ MNIE.txt" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\data.zip" />
+		<EmbeddedResource Include="Resources\PRZECZYTAJ MNIE.txt" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CriFsV2Lib" Version="2.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="Paks.Zip">
+			<HintPath>..\..\Paks.Zip\Paks.Zip\bin\Release\net7.0\publish\win-x64\Paks.Zip.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Resources\589120_hero1.jpg">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Dangan3Win.ico">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+	</ItemGroup>
+
+</Project>
