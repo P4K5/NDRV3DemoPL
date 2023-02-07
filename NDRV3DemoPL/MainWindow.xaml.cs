@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Threading;
 using System.Windows;
 using System.Windows.Media;
+using System.Threading.Tasks;
 
 namespace NDRV3DemoPL
 {
@@ -24,6 +25,7 @@ namespace NDRV3DemoPL
         string path;
         bool gameexist = false;
         bool allowClose = true;
+        Thread installationThread;
 
         public MainWindow()
         {
@@ -134,8 +136,8 @@ namespace NDRV3DemoPL
             progressBar.Visibility = Visibility.Visible;
 
 
-            var thread = new Thread(new ThreadStart(() => { Install(directory); }));
-            thread.Start();
+            installationThread = new Thread(new ThreadStart(() => { Install(directory); }));
+            installationThread.Start();
         }
 
         private void Install(string directory)
@@ -252,6 +254,10 @@ namespace NDRV3DemoPL
                 if (MessageBoxResult.No == MessageBox.Show("Czy chcesz przerwać instalację spolszczenia?", "Uwaga!", MessageBoxButton.YesNo, MessageBoxImage.Warning))
                 {
                     e.Cancel = true;
+                }
+                else
+                {
+                    installationThread.Abort();
                 }
             }
         }
